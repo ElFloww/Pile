@@ -26,9 +26,9 @@ class Pile :
         return len(self.data)
     
     def __repr__(self):
-        affichage = "|"             
+        affichage = ""             
         for element in self.data :
-            affichage = f"|{element}{affichage}"
+            affichage = f"{affichage}[{element}]"
         return affichage
     
     def est_pleine(self):
@@ -45,14 +45,14 @@ if __name__ =='__main__':
     MaPile.empile(3)
     MaPile.empile(2)
     MaPile.empile(1)
-    print(p)
-    print(p.depile())
-    print(p.depile())
-    print("Sommet =",p.sommet())
-    print(p)
-    p.empile(55)
-    print(p.est_pleine())
-    print(p)
-    p.empile(158)
-    print(p.est_pleine())
-    print(p)
+    print(MaPile)
+    print(MaPile.depile())
+    print(MaPile.depile())
+    print("Sommet =",MaPile.sommet())
+    print(MaPile)
+    MaPile.empile(55)
+    print(MaPile.est_pleine())
+    print(MaPile)
+    MaPile.empile(158)
+    print(MaPile.est_pleine())
+    print(MaPile)
