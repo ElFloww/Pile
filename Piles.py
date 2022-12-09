@@ -1,5 +1,5 @@
 class Pile :
-    #une pile sous forme de liste chaînée
+
     def __init__(self,TailleMaxPile):
         self.data = []
         self.TailleMaxPile = TailleMaxPile
@@ -34,7 +34,8 @@ class Pile :
     def est_pleine(self):
         if(self.longueur() == self.TailleMaxPile):
             return True
-        return False
+        else:
+            return False
     
 if __name__ =='__main__':
     MaPile = Pile(5)
