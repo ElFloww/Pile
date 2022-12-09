@@ -4,30 +4,65 @@ class Pile :
         self.data = []
         self.TailleMaxPile = TailleMaxPile
         
-    #Vérifie si la pile est vide
     def est_vide(self):
+        """
+        Vérifie si la pile est vide
+        
+        Args:
+        
+        returns:
+            Un booléen
+        
+        """
         return len(self.data) == 0 
     
-    #Ajout d'element dans la pile
     def empile(self,x):
+        """
+        Ajout d'element dans la pile
+        
+        Args x : l'élément à ajouter
+        
+        Returns:
+            
+        """
         if(self.est_pleine()):
             raise IndexError("La liste est pleine")
-        else:
-            self.data.append(x)
+        self.data.append(x)
     
-    #Suppression d'elements dans la pile
     def depile(self):
-        if self.est_vide() == True :
+        """
+        Suppression d'elements dans la pile
+                
+        Args x : 
+        
+        Returns: l'élément supprimé
+        
+        """
+        if (self.est_vide() == True) :
             raise IndexError("Vous avez essayé de dépiler une pile vide !")
-        else :
-            return self.data.pop()
+        return self.data.pop()
     
-    #Cherche le sommet de la pile
     def sommet(self):
+        """
+        Cherche le sommet de la pile
+        
+        Args :
+        
+        Returns :
+            Le sommet de la pile
+        
+        """
         return self.data[-1]
     
-    #Calcul la longueur de la pile
     def longueur(self):
+        """
+        Calcul la longueur de la pile
+        
+        Args :
+        
+        Returns :
+            La taille de la pile
+        """
         return len(self.data)
     
     def __repr__(self):
@@ -36,8 +71,15 @@ class Pile :
             affichage = f"{affichage}[{element}]"
         return affichage
     
-    #Regarde si la pile est pleine
     def est_pleine(self):
+        """
+        Regarde si la pile est pleine
+        
+        Args :
+        
+        Returns:
+            Booleen
+        """
         if(self.longueur() == self.TailleMaxPile):
             return True
         else:
