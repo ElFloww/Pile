@@ -4,24 +4,29 @@ class Pile :
         self.data = []
         self.TailleMaxPile = TailleMaxPile
         
+    #Vérifie si la pile est vide
     def est_vide(self):
         return len(self.data) == 0 
     
+    #Ajout d'element dans la pile
     def empile(self,x):
         if(self.est_pleine()):
             raise IndexError("La liste est pleine")
         else:
             self.data.append(x)
     
+    #Suppression d'elements dans la pile
     def depile(self):
         if self.est_vide() == True :
             raise IndexError("Vous avez essayé de dépiler une pile vide !")
         else :
             return self.data.pop()
     
+    #Cherche le sommet de la pile
     def sommet(self):
         return self.data[-1]
     
+    #Calcul la longueur de la pile
     def longueur(self):
         return len(self.data)
     
@@ -31,6 +36,7 @@ class Pile :
             affichage = f"{affichage}[{element}]"
         return affichage
     
+    #Regarde si la pile est pleine
     def est_pleine(self):
         if(self.longueur() == self.TailleMaxPile):
             return True
